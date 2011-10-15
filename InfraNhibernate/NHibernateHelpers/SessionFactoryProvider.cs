@@ -35,11 +35,7 @@ namespace InfraNhibernate.NHibernateHelpers
             {
                 _fluentConfiguration = Fluently.Configure()
                     .Database(MsSqlConfiguration.MsSql2008.ShowSql()
-                                  .ConnectionString(
-                                      c => c.Server(".\\sqlexpress")
-                                               .Database("OurMovies")
-                                               .Username("ourMoviesUser")
-                                               .Password("ourMoviesPass123456789")))
+                    .ConnectionString(c => c.FromConnectionStringWithKey("ConnectionString")))
                     .Mappings(m => m.AutoMappings.Add(AutoMap.AssemblyOf<Filme>(new AppAutomappingCfg())));
 
                 _sessionFactory = _fluentConfiguration.BuildSessionFactory();
