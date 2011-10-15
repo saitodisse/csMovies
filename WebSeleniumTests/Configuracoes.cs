@@ -10,17 +10,17 @@ namespace WebSeleniumTests
         [Test]
         public void CriarDadosTeste()
         {
-            IWebDriver driver = new FirefoxDriver();
+            //IWebDriver driver = new FirefoxDriver();
 
-            //Notice navigation is slightly different than the Java version
-            //This is because 'get' is a keyword in C#
+            ////Notice navigation is slightly different than the Java version
+            ////This is because 'get' is a keyword in C#
 
-            driver.Navigate().GoToUrl("http://localhost/OurMoviesMvc/configuracoes");
-            driver.FindElement(By.LinkText("Inserir Dados para teste")).Click();
-            driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
+            //driver.Navigate().GoToUrl("http://localhost/OurMoviesMvc/configuracoes");
+            //driver.FindElement(By.LinkText("Inserir Dados para teste")).Click();
+            //driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
             
-            // TODO add wait
-            driver.Quit(); 
+            //// TODO add wait
+            //driver.Quit(); 
         }
     }
 }
