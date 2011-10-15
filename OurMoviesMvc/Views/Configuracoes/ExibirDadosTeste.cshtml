@@ -1,0 +1,104 @@
+﻿@using Dominio.Entidades
+@model Filme
+@{
+    ViewBag.Title = "Dados Teste";
+    Layout = "../Shared/_Layout.cshtml";
+}
+<style>
+    body
+    {
+        margin: 20px;
+        background-color:#bbb;
+    }
+
+    .div1
+    {
+        margin-left: 10px;
+        padding: 5px;
+        border: 1px solid gray;
+        background-color:#ccc;
+    }
+
+    .div2
+    {
+        margin-left: 20px;
+        padding: 5px;
+        border: 1px solid gray;
+        background-color:#ddd;
+    }
+
+    .div3
+    {
+        margin-left: 30px;
+        padding: 5px;
+        border: 1px solid gray;
+        background-color:#eee;
+    }
+
+    .div4
+    {
+        margin-left: 40px;
+        padding: 5px;
+        border: 1px solid gray;
+        background-color:#fff;
+    }
+</style>
+<h2>
+    Filme @Model.Id</h2>
+<div class="div1">
+    <p>Id: @Model.Id</p>
+    <p>Nome: @Model.Nome</p>
+</div>
+<div class="div1">
+    <p>
+        IMDB Info:</p>
+    <p>
+        Id: @Model.ImdbInfo.Id
+    </p>
+    <p>Ratting: @Model.ImdbInfo.Rating</p>
+</div>
+<div class="div2">
+    <p>@Model.Releases.Count Releases:</p>
+    @foreach (Release rel in Model.Releases)
+    {
+        <div class="div3">
+            <p>Release Id: @rel.Id</p>
+            <p>Nome: @rel.Nome</p>
+
+            <div class="div4">
+                <p>
+                    @rel.Legendas.Count Legendas:</p>
+                @foreach (Legenda leg in rel.Legendas)
+                {
+                    <p>Legenda Id: @leg.Id</p>
+                    <p>lang: @leg.Linguagem</p>
+                }
+            </div>
+            <div class="div4">
+                <p>
+                    @rel.UsuarioAssociados.Count Usuario Associados:</p>
+                @foreach (Usuario usu in rel.UsuarioAssociados)
+                {
+                    <p>Usuario login: @usu.Login</p>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<h2>
+    Arquivos</h2>
+
+<div class="div2">
+    <p>@ViewBag.Arquivos.Count Arquivos:</p>
+        <br />
+    @foreach (Arquivo arq in ViewBag.Arquivos)
+    {
+        <div class="div3">
+        <p>Arquivo Id: @arq.Id</p>
+        <p>Caminho: @arq.Caminho</p>
+        <p>Release: @arq.Release.Nome</p>
+        <p>Filme: @arq.Release.Filme.Nome</p>
+        </div>
+    }
+</div>

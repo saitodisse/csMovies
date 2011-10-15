@@ -1,0 +1,12 @@
+﻿@model object
+@{
+    ViewBag.Title = "Configurações";
+    Layout = "../Shared/_Layout.cshtml";
+}
+<h2>
+    Configurações</h2>
+@Html.ActionLink("Auto Criar Banco de Dados", "AutoCriarBancoDados") |
+@Html.ActionLink("Inserir Dados para teste", "CriarDadosTeste")
+<br />
+<br />
+<span>@ViewBag.Mensagem</span>
