@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Arquivo.cs" />
     <Compile Include="Helpers\FileSizeFormatProvider.cs" />
+    <Compile Include="Repositorio\IArquiRepo.cs" />
     <Compile Include="Repositorio\IArquivoDAO.cs" />
     <Compile Include="Repositorio\IBancoDadosCreator.cs" />
     <Compile Include="Repositorio\IDownloadLinkDAO.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Entidades\Release.cs" />
     <Compile Include="Repositorio\IUsuarioDAO.cs" />
     <Compile Include="Servicos\AdministradorServico.cs" />
+    <Compile Include="Servicos\ArquivoServico.cs" />
     <Compile Include="Servicos\FilmeServico.cs" />
   </ItemGroup>
   <ItemGroup />

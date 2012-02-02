@@ -8,22 +8,16 @@ namespace Dominio.Entidades
         public virtual int Id { get; set; }
         public virtual Release Release { get; set; }
         public virtual string Caminho { get; set; }
+        public virtual long Tamanho { get; set; }
 
         public virtual string Nome()
         {
             return Path.GetFileName(Caminho);
         }
 
-        public virtual long Tamanho()
-        {
-            var fi = new FileInfo(Caminho);
-            return fi.Length;
-        }
-
         public virtual string TamanhoFormatado()
         {
-            long bytes = Tamanho();
-            return string.Format(new FileSizeFormatProvider(), "{0:fs}", bytes);
+            return string.Format(new FileSizeFormatProvider(), "{0:fs}", Tamanho);
         }
 
         public virtual bool PossuiLegenda()
