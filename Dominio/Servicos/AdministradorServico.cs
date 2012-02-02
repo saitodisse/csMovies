@@ -99,7 +99,7 @@ namespace Dominio.Servicos
             // RELACIONA ARQUIVOS COM RELEASES
             var arquivo = new Arquivo();
             arquivo.Release = release1;
-            arquivo.Caminho = @"C:\filmes\filme1.mkv";
+            arquivo.Caminho = @"G:\!downloads\complete\MOVIES 720p\Tropa De Elite 2 (2010) 720p BRRip XviD AC3 TiMPE\Tropa De Elite 2 (2010) 720p BRRip XviD AC3 TiMPE.avi";
             _arquivoDAO.Save(arquivo);
 
             arquivo = new Arquivo();

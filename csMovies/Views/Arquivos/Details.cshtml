@@ -1,0 +1,41 @@
+﻿@model Dominio.Entidades.Arquivo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Arquivo</legend>
+
+    <div class="display-label">Caminho</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caminho)
+    </div>
+
+    <div class="display-label">Tamanho</div>
+    <div class="display-field">
+        @Model.TamanhoFormatado()
+    </div>
+
+    <div class="display-label">Possui Legenda?</div>
+    <div class="display-field">
+        @Model.PossuiLegenda()
+    </div>
+
+    <div class="display-label">Filme</div>
+    <div class="display-field">
+        @Html.ActionLink(Model.Release.Filme.Nome, "Details", "Filmes", new { id = Model.Release.Filme.Id }, null)
+    </div>
+
+    <div class="display-label">Release</div>
+    <div class="display-field">
+        @Html.ActionLink(Model.Release.Nome, "Details", "Releases", new { id = Model.Release.Id }, null)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

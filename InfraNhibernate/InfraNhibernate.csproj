@@ -61,14 +61,14 @@
     <Compile Include="NHibernateHelpers\SessionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NHibernateHelpers\BancoDadosCreator.cs" />
-    <Compile Include="Repositorios\ArquivoDAO.cs" />
+    <Compile Include="Repositorios\UsuarioDAO2.cs" />
     <Compile Include="Repositorios\DownloadLinkDAO.cs" />
     <Compile Include="Repositorios\FilmeDAO.cs" />
     <Compile Include="Repositorios\ImdbInfoDAO.cs" />
     <Compile Include="Repositorios\LegendaDAO.cs" />
     <Compile Include="Repositorios\NotaDAO.cs" />
     <Compile Include="Repositorios\ReleaseDAO.cs" />
-    <Compile Include="Repositorios\UsuarioDAO.cs" />
+    <Compile Include="Repositorios\ArquivoDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

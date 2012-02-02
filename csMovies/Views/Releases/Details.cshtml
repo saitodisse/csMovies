@@ -1,0 +1,36 @@
+﻿@model Dominio.Entidades.Release
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Release</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">LegendaSincronizada</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LegendaSincronizada)
+    </div>
+
+    <div class="display-label">PossuiLegenda</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PossuiLegenda)
+    </div>
+
+    <div class="display-label">JaAssistido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JaAssistido)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

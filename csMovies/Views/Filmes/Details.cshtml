@@ -1,0 +1,37 @@
+﻿@model Dominio.Entidades.Filme
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Filme</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">Titulo do IMDB</div>
+    <div class="display-field">
+        @Model.ImdbInfo.HeaderTitle (@Model.ImdbInfo.HeaderYear)
+    </div>
+
+    <div class="display-label">Nota do IMDB</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImdbInfo.Rating)
+    </div>
+
+    <div class="display-label">link IMDB</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImdbInfo.ImdbLink)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

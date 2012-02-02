@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Arquivo.cs" />
+    <Compile Include="Helpers\FileSizeFormatProvider.cs" />
     <Compile Include="Repositorio\IArquivoDAO.cs" />
     <Compile Include="Repositorio\IBancoDadosCreator.cs" />
     <Compile Include="Repositorio\IDownloadLinkDAO.cs" />
