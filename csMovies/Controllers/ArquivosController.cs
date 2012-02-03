@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Dominio.Entidades;
-using InfraNhibernate.Repositorios;
+﻿using System.Web.Mvc;
+using Dominio.Servicos;
 
 namespace csMovies.Controllers
 {
     public class ArquivosController : Controller
     {
-        private ArquivoDAO _arquivoDAO;
+        private readonly ArquivoServico _arquivoServico;
 
-        public ArquivosController(ArquivoDAO arquivoDAO)
+        public ArquivosController(ArquivoServico arquivoServico)
         {
-            _arquivoDAO = arquivoDAO;
+            _arquivoServico = arquivoServico;
         }
 
         //
@@ -22,7 +17,7 @@ namespace csMovies.Controllers
 
         public ActionResult Index()
         {
-            return View(_arquivoDAO.GetAll());
+            return View(_arquivoServico.PesquisarTodos());
         }
 
         //
@@ -30,85 +25,7 @@ namespace csMovies.Controllers
 
         public ActionResult Details(int id)
         {
-            return View(_arquivoDAO.Get(id));
-        }
-
-        //
-        // GET: /Arquivos/Create
-
-        public ActionResult Create()
-        {
-            return View(new Arquivo());
-        } 
-
-        //
-        // POST: /Arquivos/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        
-        //
-        // GET: /Arquivos/Edit/5
- 
-        public ActionResult Edit(int id)
-        {
-            return View(_arquivoDAO.Get(id));
-        }
-
-        //
-        // POST: /Arquivos/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Arquivos/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            return View(_arquivoDAO.Get(id));
-        }
-
-        //
-        // POST: /Arquivos/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View(_arquivoServico.Pesquisar(id));
         }
     }
 }

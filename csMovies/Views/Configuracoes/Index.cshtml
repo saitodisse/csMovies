@@ -1,12 +1,23 @@
-﻿@model object
+﻿@model Dominio.Entidades.ConfiguracoesGerais
 @{
     ViewBag.Title = "Configurações";
     Layout = "../Shared/_Layout.cshtml";
 }
 <h2>
     Configurações</h2>
-@Html.ActionLink("Auto Criar Banco de Dados", "AutoCriarBancoDados") |
-@Html.ActionLink("Inserir Dados para teste", "CriarDadosTeste")
+<h3>
+    Pastas</h3>
+<ul>
+    <li>TamanhoMinimoArquivos = @Model.TamanhoMinimoArquivos bytes</li>
+    <li>TiposArquivosPadrao = @Model.TiposArquivosPadrao</li>
+</ul>
+@Html.ActionLink("Edit", "Edit")
 <br />
+<h3>
+    CUIDADO</h3>
+<ul>
+    <li>@Html.ActionLink("Auto Criar Banco de Dados", "AutoCriarBancoDados")</li>
+    <li>@Html.ActionLink("Inserir Dados Teste", "CriarDadosTeste")</li>
+</ul>
 <br />
 <span>@ViewBag.Mensagem</span>

@@ -1,13 +1,12 @@
 using Dominio.Entidades;
-using Dominio.Entidades;
 using Dominio.Repositorio;
 using InfraNhibernate.NHibernateHelpers;
 
 namespace InfraNhibernate.Repositorios
 {
-    public class LegendaDAO : DAO<Legenda>, ILegendaDAO
+    public class PastaArquivosDAO : DAO<PastaArquivos>, IPastaArquivosDAO
     {
-        public LegendaDAO(SessionProvider sessionProvider)
+        public PastaArquivosDAO(SessionProvider sessionProvider)
             : base(sessionProvider)
         {
         }

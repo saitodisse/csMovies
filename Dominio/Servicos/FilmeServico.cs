@@ -4,12 +4,7 @@ using Dominio.Repositorio;
 
 namespace Dominio.Servicos
 {
-    public interface IFilmeServico
-    {
-        IList<Filme> Todos();
-    }
-
-    public class FilmeServico : IFilmeServico
+    public class FilmeServico
     {
         private readonly IFilmeDAO _filmeDAO;
         public FilmeServico(IFilmeDAO filmeDAO)
@@ -17,9 +12,14 @@ namespace Dominio.Servicos
             _filmeDAO = filmeDAO;
         }
 
-        public IList<Filme> Todos()
+        public IList<Filme> PesquisarTodos()
         {
             return _filmeDAO.GetAll();
+        }
+
+        public Filme Pesquisar(int id)
+        {
+            return _filmeDAO.Get(id);
         }
     }
 }

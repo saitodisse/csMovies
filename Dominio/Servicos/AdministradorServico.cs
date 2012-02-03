@@ -4,15 +4,7 @@ using Dominio.Repositorio;
 
 namespace Dominio.Servicos
 {
-    public interface IAdministradorServico
-    {
-        Filme InserirDadosTeste();
-        void AutoCriarBancoDeDados();
-        Filme PesquisarFilme(int id);
-        IList<Arquivo> PesquisarArquivosPorFilme(int filme_id);
-    }
-
-    public class AdministradorServico : IAdministradorServico
+    public class AdministradorServico
     {
         private readonly IFilmeDAO _filmeDAO;
         private readonly IReleaseDAO _releaseDAO;

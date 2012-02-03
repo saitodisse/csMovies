@@ -55,6 +55,10 @@
     <Compile Include="Entidades\ArquivoTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\ArquivoServicoTeste.cs" />
+    <Compile Include="Servicos\ConfiguracoesGeraisServicoTeste.cs" />
+    <Compile Include="Servicos\PastasArquivosServicoTeste.cs" />
+    <Compile Include="Servicos\ReleaseServicoTeste.cs" />
+    <Compile Include="Servicos\FilmeServicoTeste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

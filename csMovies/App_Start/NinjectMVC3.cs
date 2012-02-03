@@ -1,7 +1,5 @@
-using Dominio.Repositorio;
-using Dominio.Servicos;
 using InfraNhibernate.NHibernateHelpers;
-using InfraNhibernate.Repositorios;
+using Ninject.Extensions.Conventions;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(csMovies.App_Start.NinjectMVC3), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(csMovies.App_Start.NinjectMVC3), "Stop")]
@@ -54,21 +52,12 @@ namespace csMovies.App_Start
             kernel.Bind<SessionFactoryProvider>().ToSelf().InSingletonScope();
             kernel.Bind<SessionProvider>().ToSelf().InRequestScope();
 
-            kernel.Bind<IBancoDadosCreator>().To<BancoDadosCreator>();
-
-            //DAOs
-            kernel.Bind<INotaDAO>().To<NotaDAO>();
-            kernel.Bind<IReleaseDAO>().To<ReleaseDAO>();
-            kernel.Bind<IUsuarioDAO>().To<UsuarioDAO>();
-            kernel.Bind<IDownloadLinkDAO>().To<DownloadLinkDAO>();
-            kernel.Bind<IFilmeDAO>().To<FilmeDAO>();
-            kernel.Bind<IImdbInfoDAO>().To<ImdbInfoDAO>();
-            kernel.Bind<ILegendaDAO>().To<LegendaDAO>();
-            kernel.Bind<IArquivoDAO>().To<ArquivoDAO>();
-
-            // servicos
-            kernel.Bind<IFilmeServico>().To<FilmeServico>();
-            kernel.Bind<IAdministradorServico>().To<AdministradorServico>();
+            // Ninject.Extensions.Conventions
+            kernel.Scan(x =>
+            {
+                x.FromAssembliesMatching("*");
+                x.BindWith(new DefaultBindingGenerator());
+            });
         }        
     }
 }

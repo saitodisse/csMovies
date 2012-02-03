@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Dominio.Entidades;
 using Dominio.Servicos;
 
@@ -6,18 +7,21 @@ namespace csMovies.Controllers
 {
     public class ConfiguracoesController : Controller
     {
-        private readonly IAdministradorServico _administradorServico;
+        private readonly AdministradorServico _administradorServico;
+        private readonly ConfiguracoesGeraisServico _configuracoesGeraisServico;
 
-        public ConfiguracoesController(IAdministradorServico administradorServico)
+        public ConfiguracoesController(AdministradorServico administradorServico, ConfiguracoesGeraisServico configuracoesGeraisServico)
         {
             _administradorServico = administradorServico;
+            _configuracoesGeraisServico = configuracoesGeraisServico;
         }
 
         //
         // GET: /Configuracoes/
         public ActionResult Index()
         {
-            return View();
+            var configuracoesGerais = _configuracoesGeraisServico.Pesquisar();
+            return View(configuracoesGerais);
         }
 
         //
@@ -54,6 +58,37 @@ namespace csMovies.Controllers
             ViewBag.Arquivos = _administradorServico.PesquisarArquivosPorFilme(id);
 
             return View(filme);
+        }
+
+
+
+        //
+        // GET: /Filmes/Edit/5
+
+        public ActionResult Edit()
+        {
+            return View(_configuracoesGeraisServico.Pesquisar());
+        }
+
+        //
+        // POST: /Filmes/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(FormCollection collection)
+        {
+            try
+            {
+                var configuracoesGerais = _configuracoesGeraisServico.Pesquisar();
+                configuracoesGerais.TamanhoMinimoArquivos = Convert.ToInt64(collection["TamanhoMinimoArquivos"]);
+                configuracoesGerais.TiposArquivosPadrao = collection["TiposArquivosPadrao"];
+                _configuracoesGeraisServico.Salvar(configuracoesGerais);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

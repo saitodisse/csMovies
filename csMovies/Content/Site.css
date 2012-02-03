@@ -158,6 +158,12 @@ textarea, input{
     background-color: #fffdfd;
 }
 
+.titulo
+{
+    font-family: Consolas, "Courier New";
+    font-size: 24pt;
+    margin: 10px;
+}
 /* <end> Custom
 -----------------------------------------------------------*/
 

@@ -16,6 +16,7 @@ namespace DominioTest.Servicos
             const string caminho = @"c:\pasta\arquivoBanana.mkv";
 
             var arquiRepoMock = new Mock<IArquiRepo>();
+            // (MOCKED) Vai no disco e verifica o tamanho do arquivo
             arquiRepoMock.Setup(x => x.TamanhoArquivo(It.IsAny<string>())).Returns(2971491348);
             IArquiRepo arquiRepo = arquiRepoMock.Object;
 
@@ -48,7 +49,9 @@ namespace DominioTest.Servicos
             const string arquivo3 = @"c:\pasta\arq3.mkv";
             caminhoEncontrados.Add(arquivo3);
 
+            // (MOCKED) Busca todos os arquivos da pasta
             arquiRepoMock.Setup(x => x.BuscarArquivosEmPasta(It.IsAny<string>(), It.IsAny<string>())).Returns(caminhoEncontrados);
+            // (MOCKED) Vai no disco e verifica o tamanho do arquivo
             arquiRepoMock.Setup(x => x.TamanhoArquivo(It.IsAny<string>())).Returns(2971491348);
             IArquiRepo arquiRepo = arquiRepoMock.Object;
 
