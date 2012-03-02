@@ -12,9 +12,6 @@ SELECT @SID
 
 IF @SID IS NULL
 BEGIN
-	--Cria usuário FOAPP na base de dados
-	CREATE LOGIN [qweasd] WITH PASSWORD=N'ourMoviesPass123456789', DEFAULT_DATABASE=[master], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
-
-	--Libera permissão para Roles dos Servers
-	exec sp_addsrvrolemember 'ourMoviesUser', sysadmin
+   CREATE LOGIN [ourMoviesUser] WITH PASSWORD=N'ourMoviesPass123456789', DEFAULT_DATABASE=[ColecaoFilmes], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+   EXEC master..sp_addsrvrolemember @loginame = N'ourMoviesUser', @rolename = N'sysadmin'
 END

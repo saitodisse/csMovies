@@ -36,7 +36,7 @@ namespace csMovies.Controllers
         {
             _administradorServico.AutoCriarBancoDeDados();
             ViewBag.Mensagem = "Banco de Dados (re)criado com sucesso!!";
-            return View("Index");
+            return Redirect("Index");
         }
 
         public ActionResult CriarDadosTeste()
