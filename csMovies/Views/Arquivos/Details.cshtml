@@ -1,11 +1,11 @@
 ﻿@model Dominio.Entidades.Arquivo
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Caminho;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>@Model.Caminho</h2>
 
 <fieldset>
     <legend>Arquivo</legend>
@@ -36,6 +36,5 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

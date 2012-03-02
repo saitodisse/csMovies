@@ -1,11 +1,11 @@
 ﻿@model Dominio.Entidades.Filme
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Nome;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>@Model.Nome</h2>
 
 <fieldset>
     <legend>Filme</legend>
