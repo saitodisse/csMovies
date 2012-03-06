@@ -19,11 +19,13 @@ namespace Dominio.Entidades
 
         public virtual void AdicionarLegenda(Legenda legenda)
         {
+            // INICIALIZA A LISTA DE LEGENDAS SE NÃO ESTIVER INICIALIZADA
             if(Legendas == null)
             {
                 Legendas = new List<Legenda>();
             }
 
+            // GRAVA A VOLTA
             legenda.Release = this;
             Legendas.Add(legenda);
         }

@@ -47,6 +47,10 @@ namespace Dominio.Servicos
             filme.Nome = "Meu Filme";
             _filmeDAO.Save(filme);
 
+            var filme2 = new Filme();
+            filme2.Nome = "Robocop";
+            _filmeDAO.Save(filme2);
+
             // NOVO IMDB INFO
             var imbdInfo = new ImdbInfo();
             imbdInfo.Rating = "9.0/10";
@@ -57,7 +61,12 @@ namespace Dominio.Servicos
             _imdbInfoDAO.Save(imbdInfo);
             filme.ImdbInfo = imbdInfo;
             _filmeDAO.Save(filme);
-
+            // FILME 2
+            imbdInfo.Filme = filme2;
+            _imdbInfoDAO.Save(imbdInfo);
+            filme2.ImdbInfo = imbdInfo;
+            _filmeDAO.Save(filme2);
+            
             // 2 RELEASES
             var release1 = new Release();
             release1.Nome = "Meu.Filme-2011-Divx.Axxo";
@@ -65,6 +74,12 @@ namespace Dominio.Servicos
             var release2 = new Release();
             release2.Nome = "Meu.Filme-2011-XVid-720p.Corpse";
             _releaseDAO.Save(release2);
+            var release3 = new Release();
+            release3.Nome = "Outro.Filme-1950-720p.Xinobi";
+            _releaseDAO.Save(release3);
+            var release4 = new Release();
+            release4.Nome = "Robocop-1990-1080p-Vitor";
+            _releaseDAO.Save(release4);
 
             // NOVA LEGENDA
             var legenda = new Legenda();
@@ -87,6 +102,12 @@ namespace Dominio.Servicos
             filme.AdicionarRelease(release1);
             filme.AdicionarRelease(release2);
             _filmeDAO.Save(filme);
+            // FILME 2
+            filme2.AdicionarRelease(release1);
+            filme2.AdicionarRelease(release2);
+            filme2.AdicionarRelease(release3);
+            filme2.AdicionarRelease(release4);
+            _filmeDAO.Save(filme2);
 
             // RELACIONA ARQUIVOS COM RELEASES
             var arquivo = new Arquivo();
