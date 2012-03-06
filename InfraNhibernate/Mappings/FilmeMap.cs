@@ -8,9 +8,9 @@ namespace InfraNhibernate.Mappings
         public FilmeMap()
         {
             Id(x => x.Id).Column("Id").GeneratedBy.Native();
-
             Map(x => x.Nome);
             References(x => x.ImdbInfo);
+            HasMany(x => x.Releases);
         }
     }
 }
