@@ -8,6 +8,7 @@ using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Utils;
 using InfraNhibernate.Convencoes;
+using InfraNhibernate.Mappings;
 using NHibernate;
 
 namespace InfraNhibernate.NHibernateHelpers
@@ -35,8 +36,10 @@ namespace InfraNhibernate.NHibernateHelpers
             {
                 _fluentConfiguration = Fluently.Configure()
                     .Database(MsSqlConfiguration.MsSql2008.ShowSql()
-                    .ConnectionString(c => c.FromConnectionStringWithKey("ConnectionString")))
-                    .Mappings(m => m.AutoMappings.Add(AutoMap.AssemblyOf<Filme>(new AppAutomappingCfg())));
+                                  .ConnectionString(c => c.FromConnectionStringWithKey("ConnectionString")))
+                    //.Mappings(m => m.AutoMappings.Add(AutoMap.AssemblyOf<Filme>(new AppAutomappingCfg())));
+                    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<FilmeMap>()
+                                       .Conventions.Setup(GetConventions()));
 
                 _sessionFactory = _fluentConfiguration.BuildSessionFactory();
 

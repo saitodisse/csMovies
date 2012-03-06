@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csMovies", "csMovies\csMovi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArquivoRepositorio", "ArquivoRepositorio\ArquivoRepositorio.csproj", "{E85CC4DB-9850-49CA-B3BD-6DF37F97074C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateConsultasTeste", "NhibernateConsultasTeste\NhibernateConsultasTeste.csproj", "{5302C1D6-E3A0-4710-93D5-02594F1155F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,11 +46,16 @@ Global
 		{E85CC4DB-9850-49CA-B3BD-6DF37F97074C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85CC4DB-9850-49CA-B3BD-6DF37F97074C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85CC4DB-9850-49CA-B3BD-6DF37F97074C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5302C1D6-E3A0-4710-93D5-02594F1155F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5302C1D6-E3A0-4710-93D5-02594F1155F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5302C1D6-E3A0-4710-93D5-02594F1155F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5302C1D6-E3A0-4710-93D5-02594F1155F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{576662A0-5A97-4E3F-B4FE-B6C88F6C12F1} = {557990D3-2420-49FE-A146-F7AD6B52127E}
+		{5302C1D6-E3A0-4710-93D5-02594F1155F3} = {557990D3-2420-49FE-A146-F7AD6B52127E}
 	EndGlobalSection
 EndGlobal
