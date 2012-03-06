@@ -1,5 +1,4 @@
 using Dominio.Entidades;
-using Dominio.Entidades;
 using Dominio.Repositorio;
 using InfraNhibernate.NHibernateHelpers;
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Dominio.Enums;
 
+
 namespace Dominio.Entidades
 {
     public class Release

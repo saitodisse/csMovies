@@ -18,5 +18,13 @@ namespace InfraNhibernate.Repositorios
                 .JoinQueryOver(x => x.Release)
                 .Where(x => x.Filme.Id == filmeId).List();
         }
+
+        public IList<Arquivo> PesquisarArquivosPorRelease(int releaseId)
+        {
+            return Session.QueryOver<Arquivo>()
+                .JoinQueryOver(x => x.Release)
+                .Where(x => x.Id == releaseId).List();
+
+        }
     }
 }
