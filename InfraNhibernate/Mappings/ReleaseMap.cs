@@ -15,13 +15,10 @@ namespace InfraNhibernate.Mappings
             Map(x => x.JaAssistido);
             Map(x => x.Nota);
 
-            HasMany(x => x.Legendas);
+            HasMany(x => x.Legendas).Cascade.All();
             HasMany(x => x.UsuarioAssociados);
             
             References(x => x.Filme);
-
-
         }
-
     }
 }
